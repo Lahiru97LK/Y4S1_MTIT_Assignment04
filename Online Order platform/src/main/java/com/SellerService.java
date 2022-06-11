@@ -1,14 +1,14 @@
 package com;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path; 
-import javax.ws.rs.Produces; 
-import javax.ws.rs.core.MediaType;
+//For REST Service
+import javax.ws.rs.*; 
+import javax.ws.rs.core.MediaType; 
+//For JSON
+import com.google.gson.*; 
+//For XML
+import org.jsoup.*; 
+import org.jsoup.parser.*; 
+import org.jsoup.nodes.Document; 
 
 import model.Seller; 
 
@@ -48,10 +48,10 @@ public class SellerService
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String updateResearcher(String researcherData)
+	public String updateResearcher(String SellerData)
 		{
 			//Convert the input string to a JSON object
-			JsonObject researcherObject = new JsonParser().parse(researcherData).getAsJsonObject();
+			JsonObject researcherObject = new JsonParser().parse(SellerData).getAsJsonObject();
 	
 			//Read the values from the JSON object
 			String researcherId = researcherObject.get("researcherId").getAsString();
@@ -72,7 +72,7 @@ public class SellerService
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String deleteResearcher(String researcherData)
+	public String deleteResearcher(String SellerData)
 	{
 	
 	//Convert the input string to an XML document

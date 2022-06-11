@@ -11,8 +11,10 @@
 	</servlet>
 	<servlet-mapping>
 		 <servlet-name>Jersey Web Application</servlet-name>
-		 <url-pattern>/myService/*</url-pattern>
+		 <url-pattern>/SellerService/*</url-pattern>
 	</servlet-mapping>
+	  
+	  <display-name>MTIT Assignment 04</display-name>
 	  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
